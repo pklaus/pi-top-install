@@ -4,8 +4,14 @@ sudo cp pi-top.list /etc/apt/sources.list.d
 # Make sure that apt-get is aware of the lastest changes and additions
 sudo apt-get update
 
+# Download and install these changes
+sudo apt-get upgrade
+
 # Install pi-top packages
 sudo apt-get install pt-battery pt-hub-controller
+
+# Install newest version of xscreensaver, required for pt-hub-controller
+sudo apt-get install xscreensaver
 
 # Reboot system
 echo 'Please reboot your Raspberry Pi'
