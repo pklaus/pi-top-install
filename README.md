@@ -10,7 +10,7 @@ df
 ```
 
 If necessary, you need to expand your file system, using the menu item *Raspberry Pi Configuration*. Also, make sure that
-i2c and spi are enabled in *Raspberry Pi Configuration*
+i2c and spi are enabled in *Raspberry Pi Configuration*. Answer Yes if asked during the installation, which will take several minutes.
 
 **Install pi-top-hub software**
 
