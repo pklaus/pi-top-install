@@ -1,7 +1,13 @@
 # pi-top-install
 Do you want to run the standard raspbian jessie on the pi-top?
 In this repository you find tips, tricks and scripts to install the necessary capabilities to control
-the pi-top hardware using a standard raspbian jessie distribution
+the pi-top hardware using a standard raspbian jessie distribution.
+
+You need to have sufficient free space on your sd card. To check, open a terminal window and type
+
+```
+df
+```
 
 **Install pi-top-hub software**
 
