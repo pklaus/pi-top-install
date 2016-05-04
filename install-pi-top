@@ -8,9 +8,6 @@ sudo apt-key add apt.pi-top.com.gpg.key
 # Make sure that apt-get is aware of the lastest changes and additions
 sudo apt-get update
 
-# Download and install these changes
-sudo apt-get upgrade
-
 # Install pi-top packages
 sudo apt-get install pt-battery pt-hub-controller
 
