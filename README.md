@@ -21,7 +21,7 @@ i2c and spi are enabled in *Raspberry Pi Configuration*
 
 ```
   cd Downloads
-  cd pi-top-install
+  cd pi-top-install-master
   chmod +x ./install-pi-top
   ./install-pi-top
 ```
