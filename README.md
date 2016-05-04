@@ -17,7 +17,7 @@ i2c and spi are enabled in *Raspberry Pi Configuration*.
 - Download the repository to your pi-top using the "download zip" button
 - Using the file manager, go to your download folder,
  right click on "pi-top-install.zip" and choose "Extract here"
-- Open a console window and type the following commands. Warning! This will upgrade your software using *sudo apt-get upgrade*. Answer Yes several times if asked during the installation, which will take several minutes.
+- Open a console window and type the following commands. Answer Yes several times if asked during the installation, which will take several minutes.
 
 ```
   cd Downloads
