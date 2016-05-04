@@ -13,5 +13,8 @@ sudo apt-get install pt-battery pt-hub-controller
 # Install newest version of xscreensaver, required for pt-hub-controller
 sudo apt-get install xscreensaver
 
+# Remove packages which are not needed anymore
+sudo apt-get autoremove
+
 # Reboot system
 echo 'Please reboot your Raspberry Pi'
