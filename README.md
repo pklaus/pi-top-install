@@ -18,19 +18,6 @@ the pi-top hardware using a standard raspbian jessie distribution
 ```
 - Reboot your Raspberry Pi
 
-- Download the repository to your pi-top using the "download zip" button
-- Using the file manager, go to your download folder,
- right click on "pi-top-battery-status-master.zip" and choose "Extract here"
-- Open a console window and type the following commands
-
-```
-  cd Downloads
-  cd pi-top-battery-status-master
-  chmod +x ./install
-  ./install
-```
-- Reboot your pi
-
 **Install battery status display widget**
 
 See separate repository https://github.com/rricharz/pi-top-battery-status
