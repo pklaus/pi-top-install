@@ -9,6 +9,9 @@ You need to have sufficient free space on your sd card. To check, open a termina
 df
 ```
 
+If necessary, you need to expand your file system, using the menu item *Raspberry Pi Configuration*. Also, make sure that
+i2c and spi are enabled in *Raspberry Pi Configuration*
+
 **Install pi-top-hub software**
 
 - Download the repository to your pi-top using the "download zip" button
