@@ -5,10 +5,10 @@ the pi-top hardware using a standard raspbian jessie distribution.
 
 **Install pi-top-hub software**
 
-The pi-top-hub software is required to control the pi-top-hub.
+The pi-top-hub software is required to control the pi-top-hub during shutdown.
 
 THIS SCRIPT IS EXPERIMENTAL AND NOT FULLY TESTED: USE ONLY AT OUR OWN RISK. UNLESS YOU ARE WILLING TO
-EXPERIMENT, YOU MIGHT PREFER TO REMOVE UNWANTED FEATURES FROM PI-TOP-OS (see https://github.com/rricharz/pi-top-just-as-raspbian.git)
+EXPERIMENT, YOU MIGHT PREFER TO REMOVE UNWANTED FEATURES FROM PI-TOP-OS (see https://github.com/rricharz/pi-top-just-as-raspbian.git).
 
 **Important, read carefully:** The script uses *sudo apt-get-upgrade* bevore installing the pi-top-hub-software. Do not
 use *sudo apt-get dist-upgrade* afterwards. Also, make sure that **i2c** and **spi** are enabled in *Raspberry Pi Configuration*.
