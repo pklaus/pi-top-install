@@ -8,10 +8,14 @@ sudo apt-key add apt.pi-top.com.gpg.key
 # Make sure that apt-get is aware of the lastest changes and additions
 sudo apt-get update
 
+# Install all upgrades
+sudo apt-get upgrade
+
 # Install pi-top packages
 sudo apt-get install pt-battery pt-hub-controller
 
-# Install newest version of xscreensaver, required for pt-hub-controller
+# Install newest version of xscreensaver, without nasty splash screen
+# xscreensaver is required by pt-hub-controller
 sudo apt-get install xscreensaver
 
 # Remove packages which are not needed anymore
