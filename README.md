@@ -7,16 +7,15 @@ the pi-top hardware using a standard raspbian jessie distribution.
 
 The pi-top-hub software is required to control the pi-top-hub.
 
-**Important, read carefully:** The present version of the pi-top-hub software only
-works reliably if installed on a fresh Raspian system (tested on **2016-03-18-raspbian-jessie.img**). Install it on a SD card of at least
-8 GB and **expand the file system** before you start the installation! Do not install it on a system, if you
-have already used *sudo apt-get upgrade*. You can use *sudo apt-get-upgrade* after having installed the pi-top-hub-software, but
-do not use *sudo apt-get dist-upgrade*. Also, make sure that **i2c** and **spi** are enabled in *Raspberry Pi Configuration*.
+THIS SCRIPT IS EXPERIMENTAL AND NOT FULLY TESTED: USE ONLY AT OUR OWN RISK
+
+**Important, read carefully:** The script uses *sudo apt-get-upgrade* bevore installing the pi-top-hub-software, do not
+use *sudo apt-get dist-upgrade* afterwards. Also, make sure that **i2c** and **spi** are enabled in *Raspberry Pi Configuration*.
 
 - Download the repository to your pi-top using the "download zip" button
 - Using the file manager, go to your download folder,
  right click on "pi-top-install.zip" and choose "Extract here"
-- Open a console window and type the following commands. Answer *Y* if asked during the installation, which will take several minutes.
+- Open a console window and type the following commands. Answer *Y* several times if asked during the installation, which will take several minutes.
 
 ```
   cd Downloads
