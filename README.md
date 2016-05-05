@@ -3,14 +3,20 @@ Do you want to run the standard raspbian jessie on the pi-top?
 In this repository you find tips, tricks and scripts to install the necessary capabilities to control
 the pi-top hardware using a standard raspbian jessie distribution.
 
-**Install pi-top-hub software**
+**Install battery status display widget (released)**
 
-The pi-top-hub software is required to control the pi-top-hub during shutdown.
+See separate repository https://github.com/rricharz/pi-top-battery-status
+
+This program has been tested on raspbian jessie and should work well with any distribution. Do not forget to turn **i2c** on in *Raspberry Pi Configuration*. The program will display the battery status, and will shut down the Raspberry Pi if the battery capacity is low and not charging. But on a standard raspbian system it will not be able to turn off the pi-top hub and the power to the Raspberry Pi. It will therefore not protect the battery from further depleting. The pi-top-hub still needs to be turned off manually with the switch.
+
+**Install pi-top-hub software (experimental)**
+
+The pi-top-hub software is required to turn the hub off automatically after a shutdown of the Raspberry pi.
 
 THIS SCRIPT IS EXPERIMENTAL AND NOT FULLY TESTED: USE ONLY AT OUR OWN RISK. UNLESS YOU ARE WILLING TO
 EXPERIMENT, YOU MIGHT PREFER TO REMOVE UNWANTED FEATURES FROM PI-TOP-OS (see https://github.com/rricharz/pi-top-just-as-raspbian.git).
 
-**Important, read carefully:** The script uses *sudo apt-get-upgrade* bevore installing the pi-top-hub-software. Do not
+IMPORTANT, READ CAREFULLY: The script uses *sudo apt-get-upgrade* bevore installing the pi-top-hub-software. Do not
 use *sudo apt-get dist-upgrade* afterwards. Also, make sure that **i2c** and **spi** are enabled in *Raspberry Pi Configuration*.
 
 - Download the repository to your pi-top using the "download zip" button
@@ -27,10 +33,6 @@ use *sudo apt-get dist-upgrade* afterwards. Also, make sure that **i2c** and **s
 - Reboot your Raspberry Pi
 
 Now you can check the installation: Shut down the Raspberry Pi. The pi-top hub and the red led on the Raspberry Pi should turn off after a while. **Important:** Install now the battery status display widget to ensure that you do not completely drain the battery.
-
-**Install battery status display widget**
-
-See separate repository https://github.com/rricharz/pi-top-battery-status
 
 You are encouraged to contribute to this repository. See https://guides.github.com/activities/hello-world/
 to learn how to create, modify and submit a branch.
