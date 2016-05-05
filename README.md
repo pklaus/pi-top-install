@@ -38,3 +38,5 @@ to learn how to create, modify and submit a branch.
 The contributions in this repository are distributed in the hope that they will be useful, but WITHOUT ANY WARRANTY;
 without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. The owner of this repository
 is not affiliated with pi-top.
+
+For problems and suggestions, please open an issue in this repository.
