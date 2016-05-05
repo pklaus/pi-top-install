@@ -11,7 +11,7 @@ This program has been tested on raspbian jessie and should work well with any di
 
 **Install pi-top-hub software (experimental)**
 
-The pi-top-hub software is required to turn the hub off automatically after a shutdown of the Raspberry pi.
+The pi-top-hub software is required to turn the hub off automatically after a shutdown of the Raspberry Pi.
 
 THIS SCRIPT IS EXPERIMENTAL AND NOT FULLY TESTED: USE ONLY AT OUR OWN RISK. UNLESS YOU ARE WILLING TO
 EXPERIMENT, YOU MIGHT PREFER TO REMOVE UNWANTED FEATURES FROM PI-TOP-OS (see https://github.com/rricharz/pi-top-just-as-raspbian.git).
