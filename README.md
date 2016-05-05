@@ -9,7 +9,7 @@ The pi-top-hub software is required to control the pi-top-hub.
 
 THIS SCRIPT IS EXPERIMENTAL AND NOT FULLY TESTED: USE ONLY AT OUR OWN RISK
 
-**Important, read carefully:** The script uses *sudo apt-get-upgrade* bevore installing the pi-top-hub-software, do not
+**Important, read carefully:** The script uses *sudo apt-get-upgrade* bevore installing the pi-top-hub-software. Do not
 use *sudo apt-get dist-upgrade* afterwards. Also, make sure that **i2c** and **spi** are enabled in *Raspberry Pi Configuration*.
 
 - Download the repository to your pi-top using the "download zip" button
