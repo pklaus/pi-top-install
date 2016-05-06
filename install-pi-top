@@ -11,11 +11,5 @@ sudo apt-get update
 # Install pi-top packages
 sudo apt-get install pt-battery pt-hub-controller
 
-# Install all other upgrades
-sudo apt-get dist-upgrade
-
-# Remove packages which are not needed anymore
-sudo apt-get autoremove
-
 # Reboot system
 echo 'PLEASE REBOOT YOUR RASPBERRY PI'
