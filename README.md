@@ -9,7 +9,7 @@ See separate repository https://github.com/rricharz/pi-top-battery-status
 
 This program has been tested on raspbian jessie and should work well with any distribution. Do not forget to turn **i2c** on in *Raspberry Pi Configuration*. The program also needs i2c-tools installed (install with the command "sudo apt-get install i2c-tools". The program will display the battery status, and will shut down the Raspberry Pi if the battery capacity is low and not charging. But on a standard raspbian system it will not be able to turn off the pi-top hub and the power to the Raspberry Pi. It will therefore not protect the battery from further depleting. The pi-top-hub still needs to be turned off manually with the switch.
 
-**brightess: python script to set the screen brightness (tested)**
+**Python script to set the screen brightness (tested)**
 
 Make sure that **spi** is turned on in *Raspberry Pi Configuration*. Furthermore you need to install the following:
 ```
