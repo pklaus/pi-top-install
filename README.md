@@ -11,7 +11,14 @@ This program has been tested on raspbian jessie and should work well with any di
 
 **brightess: python script to set the screen brightness (tested)**
 
-Make sure that **spi** is turned on in *Raspberry Pi Configuration*
+Make sure that **spi** is turned on in *Raspberry Pi Configuration*. Furthermore you need to install the following:
+```
+sudo apt-get update
+sudo apt-get install python-dev
+git clone git://github.com/doceme/py-spidev
+cd py-spidev
+sudo python setup.py install
+```
 
 Usage (new_value is a screen brightness value between 3 and 10):
 ```
