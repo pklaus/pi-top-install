@@ -1,0 +1,20 @@
+# install automatic power off
+
+# check if the install script is run by the 'pi' user
+if [ `whoami` != pi ]; then
+        echo "Please run as 'pi' user"
+        exit 1
+fi
+
+# install python script
+[ ! -d /opt/pi-top  ] && sudo mkdir opt/pi-top
+sudo cp poweroff.py /opt/pi-top
+sudo chmod 755 /opt/pi-top/poweroff.py
+
+# turn off pt-poweroff.service, if running
+sudo systemctl disable pt-poweroff.service
+
+# install pt-poweroff service
+sudo cp pt-poweroff.service /lib/systemd/system
+cd /lib/systemd/system
+sudo systemctl enable pt-poweroff.service

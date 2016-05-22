@@ -1,0 +1,4 @@
+sudo apt-get install python-dev
+git clone git://github.com/doceme/py-spidev
+cd py-spidev
+sudo python setup.py install
