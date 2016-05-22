@@ -1,11 +1,7 @@
-# brightness.py
+# poweroff.py
 #
-# sets brightness of pi-top screen
-#
-# usage (newv_value is the new brightness value to set)
-#   brightness newvalue
-#   brightness increase
-#   brightness decrease
+# shuts power of pi-top hub controller off
+# do not run except at the end of a shutdown !!!!
 
 from datetime import datetime
 import os
@@ -14,7 +10,6 @@ import time
 import sys
 
 # Set states globally
-brightness_change = 0
 current_brightness = 0
 new_brightness = 0
 screen_off = 0
@@ -57,15 +52,10 @@ def parseStateToBits():
         global state_parity
         global newBrightness
 
-        if brightness_change:
-                new_brightness = current_brightness + brightness_change
-        if new_brightness < 3:
-                new_brightness = 3
-        if new_brightness > 10:
-                new_brightness = 10
+        new_brightness= current_brightness
 
         # Set bits to send according to state variables 
-        shutdown = 0
+        shutdown = 1
         screen_off = 0
 
         # print "Brightness parity: " + str(parityOf(current_brightness))
@@ -158,18 +148,6 @@ def main():
         # Set up SpiDev
         spi = setupSPI()
 
-        # Process arguments
-
-        if len(sys.argv) == 2:
-                if sys.argv[1] == "increase":
-                        brightness_change = 1
-                elif sys.argv[1] == "decrease":
-                        brightness_change = -1
-                else:
-                        new_brightness = int(sys.argv[1])
-        else:
-                new_brightness = 9
-
         # Get current values from hub
         # THIS WILL CYCLE THROUGH UNTIL VALID DATA IS RECEIVED
         bitsToSend = getInitData(spi)
@@ -179,6 +157,7 @@ def main():
         resp_bin_str = transceiveSPI(spi, bitsToSend)
         time.sleep(cycle_sleep_time)
         resp_bin_str = transceiveSPI(spi, bitsToSend)
+
 
 # Call main function
 if __name__ == '__main__': 
