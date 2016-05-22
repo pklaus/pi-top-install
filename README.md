@@ -7,7 +7,14 @@ the pi-top hardware using a standard raspbian jessie distribution.
 
 See separate repository https://github.com/rricharz/pi-top-battery-status
 
-This program has been tested on raspbian jessie and should work well with any distribution. Do not forget to turn **i2c** on in *Raspberry Pi Configuration*. The program also needs i2c-tools installed (install with the command "sudo apt-get install i2c-tools". The program will display the battery status, and will shut down the Raspberry Pi if the battery capacity is low and not charging. But on a standard raspbian system it will not be able to turn off the pi-top hub and the power to the Raspberry Pi. It will therefore not protect the battery from further depleting. The pi-top-hub still needs to be turned off manually with the switch.
+This program has been tested on raspbian jessie and should work well with any
+distribution. Do not forget to turn **i2c** on in *Raspberry Pi Configuration*.
+The program also needs i2c-tools installed (install with the command
+ "sudo apt-get install i2c-tools". The program will display the battery status, 
+and will shut down the Raspberry Pi if the battery capacity is low and not
+charging. But unless you also install 3 (automatic poweroff) it will not be able
+to turn off the pi-top hub and the power to the Raspberry Pi. It would therefore
+not protect the battery from further depleting.
 
 **2 - Python program to set the screen brightness (tested)**
 
@@ -20,10 +27,10 @@ brightness decrease
 
 **3 - Python program and system service to turn hub-power off after shutdown (under test)**
 
-This program will help to protect your battery by shutting of the pi-top-hub-controller
-after a shutdown of the Raspbery Pi
+This program will help to protect your battery by shutting the pi-top-hub-controller
+off after a shutdown of the Raspbery Pi
 
-**Installation instructions for 2 and/or 3*
+**Installation instructions for 2 and/or 3**
 
 To download this repository, open a terminal and type:
 ```
@@ -35,14 +42,14 @@ chmod +x install*
 
 Make sure that **spi** is turned on in *Menu/Preferences/Raspberry Pi Configuration/Interfaces*.
 
-Make sure that yor system is up-to-date:
+Make sure that your system is up-to-date:
 ```
 sudo apt-get update
 sudo apt-get upgrade
 ```
 
 If you want to install 3 (automatic poweroff), you also need to make sure that your system
-is updated to the newest, so called systemd, bootup and shutdown process:
+is updated to the newest bootup and shutdown process, called systemd:
 ```
 sudo apt-get dist-upgrade
 ```
@@ -55,6 +62,7 @@ Now you can install phyton-dev and py-spidev. Both are needed to access the hub-
 To install 2 (brightness):
 ```
 ./install-brightness
+```
 
 To install 3 (automatic poweroff)
 ```
