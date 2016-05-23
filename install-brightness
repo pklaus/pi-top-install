@@ -1,4 +1,4 @@
-# install brightness in /home/pi/bin
+# install brightness and brightness.py in /home/pi/bin
 
 # check if the install script is run by the 'pi' user
 if [ `whoami` != pi ]; then
@@ -6,9 +6,10 @@ if [ `whoami` != pi ]; then
         exit 1
 fi
 
-# create bin directory, if it does not exist
+# create /home/pi/bin directory, if it does not exist
 [ ! -d /home/pi/bin  ] && mkdir /home/pi/bin
 
+# copy the two files to /home/pi/bin, make script executable
 cp brightness /home/pi/bin
 chmod +x /home/pi/bin/brightness
 cp brightness.py /home/pi/bin

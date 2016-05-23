@@ -1,4 +1,9 @@
+# install phyton-dev
 sudo apt-get install python-dev
+
+#download py-spidev
 git clone git://github.com/doceme/py-spidev
+
+#install py-spidev
 cd py-spidev
 sudo python setup.py install
