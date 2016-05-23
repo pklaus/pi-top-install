@@ -7,7 +7,7 @@ if [ `whoami` != pi ]; then
 fi
 
 # create /opt/pi-top directory, if it does not exist
-[ ! -d /opt/pi-top  ] && sudo mkdir opt/pi-top
+[ ! -d /opt/pi-top  ] && sudo mkdir /opt/pi-top
 
 # copy poweroff.py to/opt/pi-top
 sudo cp poweroff.py /opt/pi-top

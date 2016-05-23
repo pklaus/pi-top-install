@@ -25,7 +25,7 @@ brightness increase
 brightness decrease
 ```
 
-**3 - Python program and system service to turn hub-power off after shutdown (under test)**
+**3 - Python program and system service to turn hub-power off after shutdown (tested)**
 
 This program will help to protect your battery by shutting the pi-top-hub-controller
 off after a shutdown of the Raspbery Pi
