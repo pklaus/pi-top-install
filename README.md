@@ -69,6 +69,8 @@ To install 3 (automatic poweroff)
 ./install-poweroff
 ```
 
+Your new software wil work after the next bootup.
+
 You are encouraged to contribute to this repository. See https://guides.github.com/activities/hello-world/
 to learn how to create, modify and submit a branch. Or open an issue in this repository to report problems or suggestions.
 
