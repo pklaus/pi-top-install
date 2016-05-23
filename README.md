@@ -25,6 +25,24 @@ brightness increase
 brightness decrease
 ```
 
+The keyboard brightness keys will work, if you put the following into the
+keyboard section of /home/pi/.config/openbox/lxde-pi-rc.xml:
+```
+    <keybind key="0xC7">
+      <action name="Execute">
+        <command>brightness increase</command>
+      </action>
+    </keybind>
+    <keybind key="0xC6">
+      <action name="Execute">
+        <command>brightness decrease</command>
+      </action>
+    </keybind>
+```
+
+Instead, you can also copy the lxde-pi-rc.xml file found in this repository to /home/pi/.config/openbox
+
+
 **3 - Python program and system service to turn hub-power off after shutdown (tested)**
 
 This program will help to protect your battery by shutting the pi-top-hub-controller
