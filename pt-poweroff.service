@@ -5,7 +5,7 @@ Before=umount.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/python /opt/pi-top/poweroff.py
+ExecStart=/opt/pi-top/poweroff
 
 [Install]
 WantedBy=halt.target poweroff.target

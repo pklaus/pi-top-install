@@ -16,7 +16,7 @@ charging. But unless you also install 3 (automatic poweroff) it will not be able
 to turn off the pi-top hub and the power to the Raspberry Pi. It would therefore
 not protect the battery from further depleting.
 
-**2 - Python program to set the screen brightness (tested)**
+**2 - program to set the screen brightness (tested)**
 
 Usage (new_value is a screen brightness value between 3 and 10):
 ```
@@ -43,7 +43,7 @@ keyboard section of /home/pi/.config/openbox/lxde-pi-rc.xml:
 Instead, you can also copy the lxde-pi-rc.xml file found in this repository to /home/pi/.config/openbox
 
 
-**3 - Python program and system service to turn hub-power off after shutdown (tested)**
+**3 - program and system service to turn hub-power off after shutdown (tested)**
 
 This program will help to protect your battery by shutting the pi-top-hub-controller
 off after a shutdown of the Raspbery Pi
@@ -72,11 +72,6 @@ is updated to the newest bootup and shutdown process, called systemd:
 sudo apt-get dist-upgrade
 ```
 
-Now you can install phyton-dev and py-spidev. Both are needed to access the hub-controller
-```
-./install-spidev
-```
-
 To install 2 (brightness):
 ```
 ./install-brightness
@@ -85,6 +80,11 @@ To install 2 (brightness):
 To install 3 (automatic poweroff)
 ```
 ./install-poweroff
+```
+
+Recompile the  programs after modification with
+```
+make
 ```
 
 Your new software wil work after the next bootup.

@@ -9,7 +9,6 @@ fi
 # create /home/pi/bin directory, if it does not exist
 [ ! -d /home/pi/bin  ] && mkdir /home/pi/bin
 
-# copy the two files to /home/pi/bin, make script executable
+# copy the file to /home/pi/bin, make it executable
 cp brightness /home/pi/bin
 chmod +x /home/pi/bin/brightness
-cp brightness.py /home/pi/bin
