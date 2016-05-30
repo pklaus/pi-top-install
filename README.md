@@ -82,10 +82,11 @@ To install 3 (automatic poweroff)
 ./install-poweroff
 ```
 
-Recompile the  programs after modification with
+To compile the  programs (only required if you want to modify the c programs)
 ```
 make
 ```
+Then use the install scripts again to reinstall the programs
 
 Your new software wil work after the next bootup.
 
