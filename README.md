@@ -43,7 +43,7 @@ keyboard section of /home/pi/.config/openbox/lxde-pi-rc.xml:
 Instead, you can also copy the lxde-pi-rc.xml file found in this repository to /home/pi/.config/openbox
 
 
-**3 - program and system service to turn hub-power off after shutdown (tested)**
+**3 - program and system service to turn the hub-controller off after shutdown (tested)**
 
 This program will help to protect your battery by shutting the pi-top-hub-controller
 off after a shutdown of the Raspbery Pi
@@ -82,13 +82,15 @@ To install 3 (automatic poweroff)
 ./install-poweroff
 ```
 
-To compile the  programs (only required if you want to modify the c programs)
+Your new software will work after the next bootup.
+
+**Instructions to compile the programs**
+
+To compile the  programs (only required if you want to modify the c programs), use
 ```
 make
 ```
 Then use the install scripts again to reinstall the programs
-
-Your new software wil work after the next bootup.
 
 You are encouraged to contribute to this repository. See https://guides.github.com/activities/hello-world/
 to learn how to create, modify and submit a branch. Or open an issue in this repository to report problems or suggestions.
