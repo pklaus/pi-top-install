@@ -106,18 +106,19 @@ int main(int argc, char **argv)
 	
 	// send 0xFF and receive current status of pi-top-hub
 	count = 0;
+	data = 0xff;
+	printf("Sending: 0x%X\n", data);
 	do {
 		data = 0xff;
-		printf("Sending: 0x%x\n", data);
 		ok = wiringPiSPIDataRW(1, &data, 1);
 		if (ok) {
 			ok &= analyze(data);
 		}
 	}
-	while ((!ok) && (count < MAXCOUNT));
+	while ((!ok) && (count++ < MAXCOUNT));
 	
 	if (ok) {
-		printf("Receiving: 0x%x\n", data);
+		printf("Receiving: 0x%X\n", data);
 		printf("Current brightness = %d\n", brightness);
 		
 		// check whether current brightness	s within acceptable range
@@ -133,7 +134,7 @@ int main(int argc, char **argv)
 		
 		// send new data twice
 		data = new_data;
-		printf("Sending: 0x%x\n", data);
+		printf("Sending: 0x%X\n", data);
 		wiringPiSPIDataRW(1, &data, 1);
 		data = new_data;
 		wiringPiSPIDataRW(1, &data, 1);

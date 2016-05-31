@@ -50,6 +50,7 @@ int shutdown;
 //////////////////////////////
 int parity7(unsigned char data)
 //////////////////////////////
+// Calclate the parity of bits 0 - 6
 {
 	int i;
 	int p = 0;
@@ -63,6 +64,9 @@ int parity7(unsigned char data)
 ///////////////////////////////
 int analyze(unsigned char data)
 ///////////////////////////////
+// analyze data byte and set global variables
+// return 1 of parity is ok
+// Sending: bit 8 = parity of bit 1-7
 {
 	lidbit			= (data & LIDBITMASK) != 0;
 	screenoffbit	= (data & SCREENOFFMASK) != 0;
@@ -78,6 +82,9 @@ int analyze(unsigned char data)
 ///////////////
 int calculate()
 ///////////////
+// Calculate data byte using global variables
+// Set brightness and status parity bits
+// Receiving: bit 8 = brightness parity, bit 3 = status parity
 {
 	int data = brightness << 3;
 	if (parity7(brightness))
@@ -98,6 +105,8 @@ int main(int argc, char **argv)
 	unsigned char data, new_data;
 	int count, ok;
 	
+	usleep(1000000);   // let other processes finish
+	
 	int spi = wiringPiSPISetup(1, 9600);
 	if (spi < 0) {
 	  printf("Cannot initialize spi driver\n");
@@ -108,18 +117,20 @@ int main(int argc, char **argv)
 	
 	// send 0xFF and receive current status of pi-top-hub
 	count = 0;
+	data = 0xff;
+	printf("Sending: 0x%X\n", data);
 	do {
 		data = 0xff;
-		printf("Sending: 0x%x\n", data);
 		ok = wiringPiSPIDataRW(1, &data, 1);
 		if (ok) {
-			ok &= analyze(data);
+			ok = analyze(data);
 		}
 	}
-	while ((!ok) && (count < MAXCOUNT));
+	while ((!ok) && (count++ < MAXCOUNT));
+	// printf("count = %d\n", count);
 	
 	if (ok) {
-		printf("Receiving: 0x%x\n", data);
+		printf("Receiving: 0x%X\n", data);
 		printf("Current brightness = %d\n", brightness);
 		
 		// calculate new brightness
@@ -140,19 +151,30 @@ int main(int argc, char **argv)
 			brightness = 10;
 		if (brightness < 3)
 			brightness = 3;
-		printf("New brightness = %d\n", brightness);
+		printf("Requested brightness = %d\n", brightness);
 		
 		// calculate data to send
 		shutdown = 0;
 		screenoffbit = 0;		
 		new_data = calculate();
 				
-		// send new data twice
+		// send new data until accepted
+		count = 0;
 		data = new_data;
-		printf("Sending: 0x%x\n", data);
-		wiringPiSPIDataRW(1, &data, 1);
-		data = new_data;
-		wiringPiSPIDataRW(1, &data, 1);
+		printf("Sending: 0x%X\n", data);
+		do {
+			data = new_data;
+			ok = wiringPiSPIDataRW(1, &data, 1);
+			if (ok) {
+				ok = (data & BRIGHTNESSMASK) == (new_data & BRIGHTNESSMASK);
+			}
+		}
+		while ((!ok) && (count++ < MAXCOUNT));
+		// printf("count = %d\n", count);
+		if (ok) {
+			printf("Receiving: 0x%X\n", data);
+			printf("New brightness = %d\n", brightness);
+		}
 	}
 	else
 	  printf("reading current brightness not successful\n");
