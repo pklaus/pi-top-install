@@ -105,7 +105,7 @@ int main(int argc, char **argv)
 	unsigned char data, new_data;
 	int count, ok;
 	
-	usleep(1000000);   // let other processes finish
+	printf("brightness version 1.0\n");
 	
 	int spi = wiringPiSPISetup(1, 9600);
 	if (spi < 0) {

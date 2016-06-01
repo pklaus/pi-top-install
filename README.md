@@ -8,15 +8,14 @@ the pi-top hardware using a standard raspbian jessie distribution.
 See separate repository https://github.com/rricharz/pi-top-battery-status
 
 This program has been tested on raspbian jessie and should work well with any
-distribution. Do not forget to turn **i2c** on in *Raspberry Pi Configuration*.
-The program also needs i2c-tools installed (install with the command
- "sudo apt-get install i2c-tools". The program will display the battery status, 
+distribution. Do not forget to turn **i2c** on in *Menu/Peferences/Raspberry Pi Configuration/Interfaces*.
+The program will display the battery status, 
 and will shut down the Raspberry Pi if the battery capacity is low and not
 charging. But unless you also install 3 (automatic poweroff) it will not be able
 to turn off the pi-top hub and the power to the Raspberry Pi. It would therefore
 not protect the battery from further depleting.
 
-**2 - program to set the screen brightness (tested)**
+**2 - program to set the screen brightness (version 1.0, released)**
 
 Usage (new_value is a screen brightness value between 3 and 10):
 ```
@@ -43,7 +42,7 @@ keyboard section of /home/pi/.config/openbox/lxde-pi-rc.xml:
 Instead, you can also copy the lxde-pi-rc.xml file found in this repository to /home/pi/.config/openbox
 
 
-**3 - program and system service to turn the hub-controller off after shutdown (tested)**
+**3 - program and system service to turn the hub-controller off after shutdown (version 1.0, released)**
 
 This program will help to protect your battery by shutting the pi-top-hub-controller
 off after a shutdown of the Raspbery Pi
