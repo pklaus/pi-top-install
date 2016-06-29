@@ -1,14 +1,15 @@
 # pi-top-install
-Do you want to run the standard raspbian jessie on the pi-top?
+Do you want to run the standard raspbian jessie on the pi-top or pi-topCEED?
 In this repository you find tips, tricks and scripts to install the necessary capabilities to control
-the pi-top hardware using a standard raspbian jessie distribution.
+the pi-top hardware using a standard raspbian jessie distribution. Several users have confirmed that the
+brightness and shutdown programs also work properly on a pi-topCEED using Raspbian.
 
 **1 - Battery status display widget (released)**
 
 See separate repository https://github.com/rricharz/pi-top-battery-status
 
 This program has been tested on raspbian jessie and should work well with any
-distribution. Do not forget to turn **i2c** on in *Menu/Peferences/Raspberry Pi Configuration/Interfaces*.
+distribution. Do not forget to turn **i2c** on in *Menu/Preferences/Raspberry Pi Configuration/Interfaces*.
 The program will display the battery status, 
 and will shut down the Raspberry Pi if the battery capacity is low and not
 charging. But unless you also install 3 (automatic poweroff) it will not be able
