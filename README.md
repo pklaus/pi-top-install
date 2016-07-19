@@ -92,6 +92,26 @@ make
 ```
 Then use the install scripts again to reinstall the programs
 
+**4 - use the pi-top speaker with Raspbian
+
+With the following instructions you can use omxplayer with Raspbian:
+
+```
+cd /boot
+sudo nano config.txt
+```
+Remove the # in front of #hdmi_drive=2
+
+Save and exit the nano editor
+
+Reboot your rpi
+
+Call omxplayer as follow
+```
+omxplayer -o hdmi filename
+```
+where filename is the name of he file you want to play
+
 You are encouraged to contribute to this repository. See https://guides.github.com/activities/hello-world/
 to learn how to create, modify and submit a branch. Or open an issue in this repository to report problems or suggestions.
 
