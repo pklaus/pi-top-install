@@ -92,7 +92,7 @@ make
 ```
 Then use the install scripts again to reinstall the programs
 
-**4 - use the pi-top speaker with Raspbian
+**Use the pi-top speaker with Raspbian**
 
 With the following instructions you can use omxplayer with Raspbian:
 
@@ -102,6 +102,10 @@ sudo nano config.txt
 ```
 Remove the # in front of #hdmi_drive=2
 
+The line should look as follows
+```
+hdmi_drive=2
+```
 Save and exit the nano editor
 
 Reboot your rpi
