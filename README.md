@@ -52,6 +52,7 @@ off after a shutdown of the Raspbery Pi
 
 To download this repository, open a terminal and type:
 ```
+sudo apt-get install wiringpi
 cd Downloads
 git clone git://github.com/rricharz/pi-top-install
 cd pi-top-install
