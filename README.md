@@ -100,29 +100,9 @@ spi bus. In this state it will not accept commands anymore. For details see the 
 "Brightness not working - pi hub in strange state?" in this repository, which also contains the information needed
 to resolve this problem.
 
-**4 - Use the pi-top speaker with Raspbian (tested, but not yet released)**
+**4 - Use the pi-top speaker with Raspbian**
 
-With the following instructions you can use omxplayer with Raspbian:
-
-```
-cd /boot
-sudo nano config.txt
-```
-Remove the # in front of #hdmi_drive=2
-
-The line should look as follows
-```
-hdmi_drive=2
-```
-Save and exit the nano editor
-
-Reboot your rpi
-
-Call omxplayer as follow
-```
-omxplayer -o hdmi filename
-```
-where *filename* is the name of he file you want to play
+Reliable instuctions to use the pi-top speaker with standard Raspbian will be released as soon as they are available
 
 You are encouraged to contribute to this repository. See https://guides.github.com/activities/hello-world/
 to learn how to create, modify and submit a branch. Or open an issue in this repository to report problems or suggestions.
