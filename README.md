@@ -48,7 +48,7 @@ Instead, you can also copy the lxde-pi-rc.xml file found in this repository to /
 This program will help to protect your battery by shutting the pi-top-hub-controller
 off after a shutdown of the Raspbery Pi
 
-**Installation instructions for 2 and/or 3**
+*Installation instructions for 2 and/or 3*
 
 To download this repository, open a terminal and type:
 ```
@@ -84,7 +84,7 @@ To install 3 (automatic poweroff)
 
 Your new software will work after the next bootup.
 
-**Instructions to compile the programs**
+*Instructions to compile the programs*
 
 To compile the  programs (only required if you want to modify the c programs), use
 ```
@@ -92,7 +92,14 @@ make
 ```
 Then use the install scripts again to reinstall the programs
 
-**Use the pi-top speaker with Raspbian**
+*What to do if brightness and shutdown stop working*
+
+Is is possible to put the pi-top-hub-controller into a strange state by experimenting with other devices on the
+spi bus. In this state it will not accept commands anymore. For details see the closed issue #2
+"Brightness not working - pi hub in strange state?" in this repository, which also contains the information needed
+to resolve this problem.
+
+**4 - Use the pi-top speaker with Raspbian (tested, but not yet released)**
 
 With the following instructions you can use omxplayer with Raspbian:
 
@@ -114,7 +121,7 @@ Call omxplayer as follow
 ```
 omxplayer -o hdmi filename
 ```
-where filename is the name of he file you want to play
+where *filename* is the name of he file you want to play
 
 You are encouraged to contribute to this repository. See https://guides.github.com/activities/hello-world/
 to learn how to create, modify and submit a branch. Or open an issue in this repository to report problems or suggestions.
