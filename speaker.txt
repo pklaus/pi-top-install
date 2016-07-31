@@ -1,0 +1,62 @@
+
+Setting up the pi-top speaker in pi-topOS and Raspbian Jessie
+
+First step, (thanks to Rene Richarz) is to look at the config file using
+
+	sudo nano /boot/config.txt
+
+Uncomment #hdmi_drive=2. ie remove the #
+	  # Enable audio (loads snd_bcm2835)
+Uncomment #dtparam=audio=on 
+
+Then save the file, (Ctrl x) and close the editor
+
+The installation instructions that come with the pi-top speaker recommend the following two steps.
+	sudo apt-get update
+	sudo apt-get install -y pt-speaker
+This works well with pi-topOS and you should have working spound. If you are using Raspbian Jessie then you will almost certainly be greated with the response:
+	"Unable to locate package pt-speaker"
+
+Second step for Raspbian Jessie users, which worked for me with my Pi3 and a number of other people who posted to this forum. [Thanks to John.newman80 who provided a link to the following website
+
+http://www.rs-online.com/designspark/electronics/eng/blog/lorawan-enabling-the-pi-top ]. Do visit the website as the following instructions have been drawn from there.  
+
+Navigate to /etc/apt/sources.list.d, by typing
+ 
+	cd /etc/apt/sources.list.d
+
+make a new file named pi-top.list :
+	sudo nano pi-top.list
+
+add the following line:
+
+	deb http://apt.pi-top.com/raspbian/ jessie main
+
+save the file and close the editor and get the required public key:
+
+ 	wget http://apt.pi-top.com/apt.pi-top.com.gpg.key
+
+Add the key to the APT keyring
+
+ 	sudo apt-key add apt.pi-top.com.gpg.key
+
+Ensure the Pi is up to date:
+
+ 	sudo apt-get update
+
+ 	sudo apt-get upgrade
+
+install the pi-top specific package pt-speaker
+
+	sudo apt-get install -y pt-speaker
+	
+[Note added by rricharz: Do not install pt-hub-controller in Raspbian, it is not fully compatible]
+
+Reboot and then the pi-top speaker should be working.
+
+Try out the sound using omxplayer as follows:
+ omxplayer -o hdmi filename
+ where filename is the name of the file to play.
+ 
+The sound level can be adjusted using the + and - keys.
+In gui video players like utube, sound levels can be adjusted with the system sound menu 
