@@ -102,7 +102,8 @@ to resolve this problem.
 
 **4 - Use the pi-top speaker with Raspbian**
 
-Reliable instuctions to use the pi-top speaker with standard Raspbian will be released as soon as they are available
+Thanks to Norman Lawrence we have now well written instructions for the installation of the pi-top- speaker,
+see https://github.com/rricharz/pi-top-install/blob/master/speaker.txt
 
 You are encouraged to contribute to this repository. See https://guides.github.com/activities/hello-world/
 to learn how to create, modify and submit a branch. Or open an issue in this repository to report problems or suggestions.
