@@ -1,25 +1,26 @@
-
+#############################################################
 Setting up the pi-top speaker in pi-topOS and Raspbian Jessie
+#############################################################
 
-First step, (thanks to Rene Richarz) is to look at the config file using
+The hardware installation instructions are inside the cover of the pi-top package. You need to tear it open to see them
+Set the switch to (m) for mono, (l) for left or (r) for right.
 
-	sudo nano /boot/config.txt
 
-Uncomment #hdmi_drive=2. ie remove the #
-	  # Enable audio (loads snd_bcm2835)
-Uncomment #dtparam=audio=on 
+Install the software
+####################
 
-Then save the file, (Ctrl x) and close the editor
-
-The installation instructions that come with the pi-top speaker recommend the following two steps.
+The installation instructions that come with the pi-top speaker recommend the following two steps:
 	sudo apt-get update
 	sudo apt-get install -y pt-speaker
-This works well with pi-topOS and you should have working spound. If you are using Raspbian Jessie then you will almost certainly be greated with the response:
+This works well with pi-topOS and you should have working sound. If you are using Raspbian Jessie then you will
+almost certainly be greated with the response:
 	"Unable to locate package pt-speaker"
 
-Second step for Raspbian Jessie users, which worked for me with my Pi3 and a number of other people who posted to this forum. [Thanks to John.newman80 who provided a link to the following website
+Second step for Raspbian Jessie users, which worked for me with my Pi3 and a number of other people who posted
+to this forum. [Thanks to John.newman80 who provided a link to the following website
 
-http://www.rs-online.com/designspark/electronics/eng/blog/lorawan-enabling-the-pi-top ]. Do visit the website as the following instructions have been drawn from there.  
+http://www.rs-online.com/designspark/electronics/eng/blog/lorawan-enabling-the-pi-top ].
+Do visit the website as the following instructions have been drawn from there.  
 
 Navigate to /etc/apt/sources.list.d, by typing
  
@@ -46,11 +47,11 @@ Ensure the Pi is up to date:
 
  	sudo apt-get upgrade
 
-install the pi-top specific package pt-speaker
+Install the pi-top specific package pt-speaker
 
 	sudo apt-get install -y pt-speaker
 	
-[Note added by rricharz: Do not install pt-hub-controller in Raspbian, it is not fully compatible]
+Do not install pt-hub-controller in Raspbian, it is not fully compatible
 
 Reboot and then the pi-top speaker should be working.
 
@@ -59,4 +60,42 @@ Try out the sound using omxplayer as follows:
  where filename is the name of the file to play.
  
 The sound level can be adjusted using the + and - keys.
-In gui video players like utube, sound levels can be adjusted with the system sound menu 
+In gui video players like utube, sound levels can be adjusted with the system sound menu
+
+
+If the speaker still does not work, do the following:
+#####################################################
+
+Look at the config file
+#######################
+Open a terminal and type
+
+	sudo nano /boot/config.txt
+
+Uncomment #hdmi_drive=2. ie remove the #
+	  # Enable audio (loads snd_bcm2835)
+Uncomment #dtparam=audio=on 
+
+Then save the file, (Ctrl x) and close the editor an reboot your system
+
+If it still does not work, proceed as follows
+
+Test whether the Raspberry Pi can talk to the speaker using i2c:
+################################################################
+Open a terminal and type
+	i2cdetect -y 1
+	
+You should see your speaker at address 73, if you have set the switch to mono.
+
+If i2cdetect is not installed, you can install it with
+	sudo apt-get install i2ctools
+	
+If i2cdetect reports that it cannot find "/dev/i2c-1" you need to switch i2c on in
+Menu->Preferences->Raspberry Pi Configuration -> Interfaces
+
+If i2cdetect still cannot find "/dev/i2c-1" your system is corrupted. pi-top recommends
+to download a new image and start from scratch.
+
+If you cannot see your speaker, check the 40 pin cable between the Raspberry Pi and the hub-cntroller,
+or make sure that the i2c lines are connected using jumper cables.
+
