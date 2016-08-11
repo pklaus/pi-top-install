@@ -2,8 +2,21 @@
 Setting up the pi-top speaker in pi-topOS and Raspbian Jessie
 #############################################################
 
+Original written by Norman Lawrence, additions by Rene Richarz
+
 The hardware installation instructions are inside the cover of the pi-top package. You need to tear it open to see them
 Set the switch to (m) for mono, (l) for left or (r) for right.
+
+How does the speaker work
+#########################
+
+The speaker uses digital hdmi sound, which is provided on the SPDIF pin of the pi-top-hub-controller
+
+Inside the speaker package, there is a DIR9001 transceiver, which converts the digital signal.
+A TAS2505 amplifier amplifies this signal. This amplifier allows to adjust loudness using the i2c bus of the rpi.
+Software needs to be installed on the rpi to route the sound to the hdmi channel and to send setup and loudness
+commands to the amplifier. The i2c pins of the 40 pin connector of the rpi need to be connected to the corresponding
+pins of the hub-controller, either using the 40 pin cable or some jumper cables.
 
 
 Install the software
@@ -82,6 +95,7 @@ If it still does not work, proceed as follows
 
 Test whether the Raspberry Pi can talk to the speaker using i2c:
 ################################################################
+
 Open a terminal and type
 	i2cdetect -y 1
 	
