@@ -102,7 +102,7 @@ Open a terminal and type
 You should see your speaker at address 73, if you have set the switch to mono.
 
 If i2cdetect is not installed, you can install it with
-	sudo apt-get install i2ctools
+	sudo apt-get install i2c-tools
 	
 If i2cdetect reports that it cannot find "/dev/i2c-1" you need to switch i2c on in
 Menu->Preferences->Raspberry Pi Configuration -> Interfaces
@@ -110,6 +110,6 @@ Menu->Preferences->Raspberry Pi Configuration -> Interfaces
 If i2cdetect still cannot find "/dev/i2c-1" your system is corrupted. pi-top recommends
 to download a new image and start from scratch.
 
-If you cannot see your speaker, check the 40 pin cable between the Raspberry Pi and the hub-cntroller,
+If you cannot see your speaker, check the 40 pin cable between the Raspberry Pi and the hub-controller,
 or make sure that the i2c lines are connected using jumper cables.
 

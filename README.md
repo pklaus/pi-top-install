@@ -100,9 +100,9 @@ spi bus. In this state it will not accept commands anymore. For details see the 
 "Brightness not working - pi hub in strange state?" in this repository, which also contains the information needed
 to resolve this problem.
 
-**4 - Use the pi-top speaker with Raspbian**
+**4 - Use the pi-top speaker with Raspbian Jessie (and pi-topOS)**
 
-Thanks to Norman Lawrence we have now well written instructions for the installation of the pi-top- speaker,
+Thanks to Norman Lawrence we have now well written instructions for the installation of the pi-top- speaker.
 see https://github.com/rricharz/pi-top-install/blob/master/speaker.txt
 
 You are encouraged to contribute to this repository. See https://guides.github.com/activities/hello-world/
