@@ -56,7 +56,6 @@ sudo apt-get install wiringpi
 cd Downloads
 git clone git://github.com/rricharz/pi-top-install
 cd pi-top-install
-chmod +x install*
 ```
 
 Make sure that **spi** is turned on in *Menu/Preferences/Raspberry Pi Configuration/Interfaces*.
@@ -75,12 +74,12 @@ sudo apt-get dist-upgrade
 
 To install 2 (brightness):
 ```
-./install-brightness
+sudo ./install-brightness
 ```
 
 To install 3 (automatic poweroff)
 ```
-./install-poweroff
+sudo ./install-poweroff
 ```
 
 Your new software will work after the next bootup.

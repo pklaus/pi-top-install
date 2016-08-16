@@ -1,14 +1,16 @@
-# install brightness and brightness.py in /home/pi/bin
+# install brightness
+
+DIR=/usr/local/bin
 
 # check if the install script is run by the 'pi' user
-if [ `whoami` != pi ]; then
-        echo "Please run as 'pi' user"
+if [ `whoami` != root ]; then
+        echo "Please run as 'root' user"
         exit 1
 fi
 
-# create /home/pi/bin directory, if it does not exist
-[ ! -d /home/pi/bin  ] && mkdir /home/pi/bin
+# create the directory, if it does not exist
+[ ! -d $DIR  ] && mkdir $DIR
 
-# copy the file to /home/pi/bin, make it executable
-cp brightness /home/pi/bin
-chmod +x /home/pi/bin/brightness
+# copy the file, make it executable
+cp brightness $DIR
+chmod +x $DIR/brightness
