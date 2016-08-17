@@ -84,10 +84,11 @@ sudo ./install-poweroff
 
 Your new software will work after the next bootup.
 
-*Instructions to compile the programs*
+*Instructions to recompile the programs*
 
-To compile the  programs (only required if you want to modify the c programs), use
+To recompile the  programs (only required if you want to modify the c programs), use
 ```
+make clean
 make
 ```
 Then use the install scripts again to reinstall the programs

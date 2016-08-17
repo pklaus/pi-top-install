@@ -1,5 +1,9 @@
 all: brightness poweroff
 
+.PHONY: clean
+clean:
+	@-rm brightness poweroff
+
 poweroff: poweroff.c
 	gcc -o poweroff poweroff.c -lwiringPi
 
